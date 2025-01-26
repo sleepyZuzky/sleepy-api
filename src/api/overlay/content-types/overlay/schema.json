@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "overlays",
+  "info": {
+    "singularName": "overlay",
+    "pluralName": "overlays",
+    "displayName": "Overlay",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "streamer": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "streamer",
+      "required": true
+    },
+    "screenshot": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "overlay_tags": {
+      "displayName": "Overlay",
+      "type": "component",
+      "repeatable": true,
+      "component": "rrss.overlay"
+    },
+    "views": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::view.view",
+      "mappedBy": "overlay"
+    }
+  }
+}
