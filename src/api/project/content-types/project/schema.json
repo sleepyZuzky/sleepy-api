@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "screenshot": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "label"
+    },
+    "techs": {
+      "displayName": "project_tecnologies",
+      "type": "component",
+      "repeatable": true,
+      "component": "dev.project-tecnologies"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

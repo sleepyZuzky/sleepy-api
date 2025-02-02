@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_dev_project_tecnologies",
+  "info": {
+    "displayName": "project_tecnologies",
+    "icon": "code",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon_name": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "thin",
+        "light",
+        "regular",
+        "solid"
+      ]
+    },
+    "family": {
+      "type": "enumeration",
+      "enum": [
+        "classic",
+        "sharp",
+        "duotone",
+        "brands"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

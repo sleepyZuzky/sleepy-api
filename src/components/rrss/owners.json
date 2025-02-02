@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_rrss_owners",
+  "info": {
+    "displayName": "owners",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "socials": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "brand",
+        "success",
+        "neutral",
+        "warning",
+        "danger"
+      ],
+      "default": "brand"
+    },
+    "appearance": {
+      "type": "enumeration",
+      "enum": [
+        "outlined accent",
+        "accent",
+        "outlined",
+        "filled",
+        "outlined filled"
+      ],
+      "default": "outlined accent"
+    }
+  }
+}
