@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Thumbnail": {
+    "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -23,7 +23,7 @@
         "audios"
       ]
     },
-    "Type": {
+    "type": {
       "type": "string"
     },
     "overlay": {
@@ -31,6 +31,17 @@
       "relation": "manyToOne",
       "target": "api::overlay.overlay",
       "inversedBy": "views"
+    },
+    "content": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

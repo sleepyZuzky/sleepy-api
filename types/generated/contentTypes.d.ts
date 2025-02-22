@@ -454,6 +454,7 @@ export interface ApiViewView extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -462,8 +463,8 @@ export interface ApiViewView extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     overlay: Schema.Attribute.Relation<'manyToOne', 'api::overlay.overlay'>;
     publishedAt: Schema.Attribute.DateTime;
-    Thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Type: Schema.Attribute.String;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
