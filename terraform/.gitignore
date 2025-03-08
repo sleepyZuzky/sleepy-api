@@ -2,3 +2,4 @@
 terraform.* 
 output.json
 .terraform.*
+output/plan

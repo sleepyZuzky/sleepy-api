@@ -23,6 +23,19 @@ locals {
     "${local.region}a" = "192.168.20.0/24"
     "${local.region}b" = "192.168.21.0/24"
   }
+
+  database = {
+    name = "postgress"
+    username = "user"
+    password = "password"
+  }
+
+  repo = {
+    owner = ""
+    name = ""
+    git_username = ""
+    git_token = ""
+  }
 }
 
 #-------------------------------------------------------------------------------
@@ -35,7 +48,6 @@ variable "vault_root_token" {
 # ------------------------------------------------------------------------------
 # VPC
 # ------------------------------------------------------------------------------
-
 variable "vpc_cidr_block" {
   description = "CIDR IP Block to be assigned in VPC"
   default     = "192.168.0.0/16"
@@ -45,7 +57,6 @@ variable "routing_table_cird_block" {
   description = "CIDR IP Block to be assigned in Routing Table"
   default     = "0.0.0.0/0"
 }
-
 
 variable "access_key" {
   type = string
@@ -99,24 +110,25 @@ variable "instance_security_group_name" {
 variable "project_root_path" {
   type = string
 }
+
 variable "terraform_root_path" {
   type = string
 
 }
 
-variable "gitUsername" {
+variable "git_username" {
   type = string
 }
 
-variable "gitToken" {
+variable "git_token" {
   type = string
 }
 
-variable "your_username" {
+variable "owner" {
   type = string
 }
 
-variable "your_repo" {
+variable "name" {
   type = string
 }
 

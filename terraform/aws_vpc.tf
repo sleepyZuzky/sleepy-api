@@ -34,6 +34,17 @@ resource "aws_subnet" "private_subnets" {
   depends_on = [aws_vpc.sleepy_network]
 }
 
+resource "aws_db_subnet_group" "private_group" {
+  name = "private-main"
+  subnet_ids = [aws_subnet.private_subnets["${local.region}a"].id, aws_subnet.private_subnets["${local.region}b"].id]
+
+  tags = {
+    Name = "Db Subnet Group"
+  }
+
+  depends_on = [aws_subnet.private_subnets]
+}
+
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.sleepy_network.id
 
