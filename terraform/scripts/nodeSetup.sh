@@ -8,4 +8,8 @@ sudo apt-get update
 nvm install 22
 npm install -g pnpm@latest-10
 npm install -g pm2
+cd /home/ubuntu/sleepy-api || exit
+pnpm install
+pnpm run build
+pm2 start /home/ubuntu/ecosystem.config.js
 echo '<<   NODE SETUP DONE   >>'
