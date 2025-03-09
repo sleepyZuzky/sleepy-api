@@ -17,6 +17,10 @@ module.exports = {
         CF_ENDPOINT: '',
         CF_BUCKET: '',
         CF_PUBLIC_ACCESS_URL: ''
+        AWS_ACCESS_KEY_ID: '',
+        AWS_ACCESS_SECRET: '',
+        AWS_REGION: '',
+        AWS_BUCKET: ''
       },
     },
   ],
