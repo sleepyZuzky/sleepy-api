@@ -21,14 +21,14 @@ module.exports = ({ env }) => [
                         "data:",
                         "blob:",
                         "market-assets.strapi.io",
-                        env("CF_PUBLIC_ACCESS_URL") ? env("CF_PUBLIC_ACCESS_URL").replace(/^https?:\/\//, "") : ""
+                        env("AWS_PUBLIC_ACCESS_URL") ? env("AWS_PUBLIC_ACCESS_URL").replace(/^https?:\/\//, "") : ""
                     ],
                     "media-src": [
                         "'self'",
                         "data:",
                         "blob:",
                         "market-assets.strapi.io",
-                        env("CF_PUBLIC_ACCESS_URL") ? env("CF_PUBLIC_ACCESS_URL").replace(/^https?:\/\//, "") : ""
+                        env("AWS_PUBLIC_ACCESS_URL") ? env("AWS_PUBLIC_ACCESS_URL").replace(/^https?:\/\//, "") : ""
                     ],
                     upgradeInsecureRequests: null
                 }
