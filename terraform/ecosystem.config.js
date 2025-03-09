@@ -12,11 +12,6 @@ module.exports = {
         DATABASE_NAME: 'name', // DB name under 'Configuration' tab
         DATABASE_USERNAME: 'user', // default username
         DATABASE_PASSWORD: 'password',
-        CF_ACCESS_KEY_ID: '',
-        CF_ACCESS_SECRET: '',
-        CF_ENDPOINT: '',
-        CF_BUCKET: '',
-        CF_PUBLIC_ACCESS_URL: ''
         AWS_ACCESS_KEY_ID: '',
         AWS_ACCESS_SECRET: '',
         AWS_REGION: '',
