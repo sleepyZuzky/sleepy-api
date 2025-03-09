@@ -41,23 +41,6 @@ resource "aws_instance" "strapi" {
     destination = "/home/ubuntu/.scripts"
   }
 
-  provisioner "file" {
-    source      = "./config"
-    destination = "/home/ubuntu/.config"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      # "sudo chmod +x /home/ubuntu/.config/*",
-      "sudo chmod +x /home/ubuntu/.scripts/*",
-      "/home/ubuntu/.scripts/nodeSetup.sh",
-    ]
-  }
-
-  provisioner "local-exec" {
-    command = "scripts/localConfig.sh ${var.project_root_path} ${var.terraform_root_path}"
-  }
-
   provisioner "remote-exec" {
     inline = [
       "sudo chmod +x /home/ubuntu/.scripts/*",
@@ -66,11 +49,34 @@ resource "aws_instance" "strapi" {
   }
 
   provisioner "file" {
-    source      = "${var.project_root_path}/.env"
-    destination = "/home/ubuntu/strapiApp/.env"
+    source      = "${var.terraform_root_path}/config/database.ts"
+    destination = "/home/ubuntu/sleepy-api/config/database.ts"
   }
 
-  # depends_on = [aws_db_instance.sleepy_db]
+  provisioner "file" {
+    source      = "${var.terraform_root_path}/config/plugins.ts"
+    destination = "/home/ubuntu/sleepy-api/config/plugins.ts"
+  }
+
+  provisioner "file" {
+    source      = "${var.terraform_root_path}/config/server.ts"
+    destination = "/home/ubuntu/sleepy-api/config/server.ts"
+  }
+
+  provisioner "file" {
+    source      = "${var.terraform_root_path}/ecosystem.config.js"
+    destination = "/home/ubuntu/ecosystem.config.js"
+  }
+
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo chmod +x /home/ubuntu/.scripts/*",
+      "/home/ubuntu/.scripts/nodeSetup.sh",
+    ]
+  }
+
+  depends_on = [aws_db_instance.sleepy_db]
 }
 
 resource "null_resource" "instance_details" {
